@@ -10,7 +10,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    uses: xeffyr/android-native-devenv@latest
 
     steps:
     - uses: actions/checkout@v2
@@ -21,21 +20,25 @@ jobs:
         distribution: 'adopt'
 
     - name: Build packages for aarch64
+      uses: xeffyr/android-native-devenv@latest
       run: |
         cd env-packages
         for i in $(ls packages); do ./build-package.sh -a aarch64 $i; done
 
     - name: Build packages for arm
+      uses: xeffyr/android-native-devenv@latest
       run: |
         cd env-packages
         for i in $(ls packages); do ./build-package.sh -a arm $i; done
 
     - name: Build packages for i686
+      uses: xeffyr/android-native-devenv@latest
       run: |
         cd env-packages
         for i in $(ls packages); do ./build-package.sh -a i686 $i; done
 
     - name: Build packages for x86_64
+      uses: xeffyr/android-native-devenv@latest
       run: <
         cd env-packages
         for i in $(ls packages); do ./build-package.sh -a x86_64 $i; done
