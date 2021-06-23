@@ -22,22 +22,22 @@ jobs:
     - name: Build packages for aarch64
       run: |
         cd env-packages
-        for i in $(ls packages); do ./build-packages.sh -a aarch64 $i; done
+        for i in $(ls packages); do ./build-package.sh -a aarch64 $i; done
 
     - name: Build packages for arm
       run: |
         cd env-packages
-        for i in $(ls packages); do ./build-packages.sh -a arm $i; done
+        for i in $(ls packages); do ./build-package.sh -a arm $i; done
 
     - name: Build packages for i686
       run: |
         cd env-packages
-        for i in $(ls packages); do ./build-packages.sh -a i686 $i; done
+        for i in $(ls packages); do ./build-package.sh -a i686 $i; done
 
     - name: Build packages for x86_64
       run: <
         cd env-packages
-        for i in $(ls packages); do ./build-packages.sh -a x86_64 $i; done
+        for i in $(ls packages); do ./build-package.sh -a x86_64 $i; done
         
     - name: Build app with Gradle
       run: |
