@@ -20,17 +20,17 @@ jobs:
         distribution: 'adopt'
 
     - name: Build packages for aarch64
-      run: <
+      run: |
         cd env-packages
         for i in $(ls packages); do ./build-packages.sh -a aarch64 $i; done
 
     - name: Build packages for arm
-      run: <
+      run: |
         cd env-packages
         for i in $(ls packages); do ./build-packages.sh -a arm $i; done
 
     - name: Build packages for i686
-      run: <
+      run: |
         cd env-packages
         for i in $(ls packages); do ./build-packages.sh -a i686 $i; done
 
@@ -40,7 +40,7 @@ jobs:
         for i in $(ls packages); do ./build-packages.sh -a x86_64 $i; done
         
     - name: Build app with Gradle
-      run: <
+      run: |
         cd alpine-term-app
         chmod +x gradlew
         ./gradlew build
